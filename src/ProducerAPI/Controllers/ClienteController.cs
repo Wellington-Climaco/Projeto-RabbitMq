@@ -1,4 +1,5 @@
-﻿using MassTransit;
+﻿using Contracts;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ProducerAPI;
@@ -14,12 +15,9 @@ public class ClienteController : ControllerBase
     }
 
     [HttpPost("cliente/add")]
-    public async Task<IActionResult> CadastroCliente([FromBody] ClienteRequest cliente)
+    public async Task<IActionResult> CadastroCliente([FromBody] ClienteRequest dados)
     {
-
-        var clienteEvent = new ClienteEvent(cliente.FirstName, cliente.LastName, cliente.Email, cliente.Cep);
-
-        await _publish.Publish(clienteEvent);
+        await _publish.Publish(new ClienteAnaliseEvent(dados.FirstName, dados.LastName, dados.Email, dados.Cep));
 
         return Ok("Cadastro enviado para análise");
     }
