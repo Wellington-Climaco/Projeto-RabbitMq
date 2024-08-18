@@ -16,6 +16,8 @@ namespace Consumer.Worker
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+            
+
             builder.Services.AddMassTransit(x =>
             {
                 x.SetKebabCaseEndpointNameFormatter();
@@ -25,7 +27,7 @@ namespace Consumer.Worker
              
                 x.UsingRabbitMq((ctx, cfg) =>
                 {
-                    cfg.Host(new Uri("amqp://localhost:5672"), host =>
+                    cfg.Host(new Uri("amqp://rabbitmq-pub-sub:5672"), host =>
                     {
                         host.Username("guest");
                         host.Password("guest");
@@ -36,6 +38,13 @@ namespace Consumer.Worker
             });
 
             var host = builder.Build();
+
+            using (var scope = host.Services.CreateScope())
+            {
+                var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                dbContext.Database.Migrate();
+            }
+            
             host.Run();
         }
     }

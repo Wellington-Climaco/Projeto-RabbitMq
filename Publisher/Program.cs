@@ -9,7 +9,7 @@ builder.Services.AddMassTransit(busConfigurator =>
 
     busConfigurator.UsingRabbitMq((context, cfg) =>
     {
-        cfg.Host(new Uri("amqp://localhost:5672"), host =>
+        cfg.Host(new Uri("amqp://rabbitmq-pub-sub:5672"), host =>
         {
             host.Username("guest");
             host.Password("guest");

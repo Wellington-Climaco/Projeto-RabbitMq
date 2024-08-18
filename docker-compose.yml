@@ -1,0 +1,46 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
+
+version: '3.4'
+
+services:
+  rabbitmq-pub-sub:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-pub-sub
+    ports:
+      - "5672:5672"
+      - "15672:15672" 
+
+  sqlserver-db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sqlserver-db
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=1q2w3e4r@#$
+    ports:
+      - "1433:1433"
+
+  
+  consumerworker:
+    image: consumerworker
+    build:
+      context: .
+      dockerfile: Consumer.Worker/Dockerfile
+    container_name: consumerworker  
+    depends_on:
+      - rabbitmq-pub-sub
+      - sqlserver-db
+
+
+  producerapi:
+    image: producerapi
+    build:
+      context: .
+      dockerfile: Publisher/Dockerfile
+    container_name: producerapi
+    depends_on:
+      - rabbitmq-pub-sub
+    ports:
+      - 5025:5025 
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - MSSQL_SA_PASSWORD=1q2w3e4r@#$
