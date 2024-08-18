@@ -1,10 +1,10 @@
+using Consumer.Worker.Abstrations;
+using Consumer.Worker.Database;
+using Consumer.Worker.Service;
+using Consumer.Worker.Workers;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
-using ProducerAPI.Worker.Abstrations;
-using ProducerAPI.Worker.Database;
-using ProducerAPI.Worker.Service;
-using ProducerAPI.Worker.Workers;
-namespace ProducerAPI.Worker
+namespace Consumer.Worker
 {
     public class Program
     {

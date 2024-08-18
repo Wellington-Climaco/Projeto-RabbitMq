@@ -1,15 +1,10 @@
-﻿using Contracts;
+﻿using Consumer.Worker.Abstrations;
+using Consumer.Worker.Database;
+using Consumer.Worker.Entities;
+using Contracts;
 using MassTransit;
-using ProducerAPI.Worker.Abstrations;
-using ProducerAPI.Worker.Database;
-using ProducerAPI.Worker.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ProducerAPI.Worker.Workers
+namespace Consumer.Worker.Workers
 {
     public class CadastroClienteConsumer : IConsumer<ClienteAnaliseEvent>
     {

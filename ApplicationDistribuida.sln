@@ -5,15 +5,15 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publisher", "Publisher", "{5967AD16-5273-4EFB-A0C2-6B394E2F7A4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProducerAPI", "src\ProducerAPI\ProducerAPI.csproj", "{473DE4DE-28B9-450F-92D5-0AC7D93F6793}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProducerAPI", "Publisher\ProducerAPI.csproj", "{473DE4DE-28B9-450F-92D5-0AC7D93F6793}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Worker", "Worker", "{FD9A8E53-CF98-4888-8BDC-FD48CDE80022}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProducerAPI.Worker", "ProducerAPI.Worker\ProducerAPI.Worker.csproj", "{C8A33BA7-9488-4BEE-A998-6B3A29AD4251}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consumer.Worker", "Consumer.Worker\Consumer.Worker.csproj", "{C8A33BA7-9488-4BEE-A998-6B3A29AD4251}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{E7A52D8B-398E-4F76-A735-11B95E43A31B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{512A1582-3BD2-4705-85D1-E543DBE407D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Shared\Contracts.csproj", "{512A1582-3BD2-4705-85D1-E543DBE407D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

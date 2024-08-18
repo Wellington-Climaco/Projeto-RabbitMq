@@ -1,6 +1,6 @@
-﻿using ProducerAPI.Worker.Response;
+﻿using Consumer.Worker.Response;
 
-namespace ProducerAPI.Worker.Abstrations
+namespace Consumer.Worker.Abstrations
 {
     public interface IViaCepService
     {

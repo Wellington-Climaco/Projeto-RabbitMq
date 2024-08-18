@@ -1,13 +1,8 @@
-﻿using ProducerAPI.Worker.Abstrations;
-using ProducerAPI.Worker.Response;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Consumer.Worker.Abstrations;
+using Consumer.Worker.Response;
 using System.Text.Json;
-using System.Threading.Tasks;
 
-namespace ProducerAPI.Worker.Service
+namespace Consumer.Worker.Service
 {
     internal class ViaCepService : IViaCepService
     {

@@ -1,4 +1,4 @@
-﻿namespace ProducerAPI.Worker.Response
+﻿namespace Consumer.Worker.Response
 {
     public class ViaCepResponse
     {

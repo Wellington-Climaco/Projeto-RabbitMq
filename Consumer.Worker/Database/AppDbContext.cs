@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ProducerAPI.Worker.Entities;
+﻿using Consumer.Worker.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace ProducerAPI.Worker.Database
+namespace Consumer.Worker.Database
 {
     public class AppDbContext : DbContext
     {
