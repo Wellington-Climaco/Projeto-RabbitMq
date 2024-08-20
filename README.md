@@ -17,7 +17,7 @@ docker-compose up --build
 Esse comando irá fazer a preparação de todo o ambiente.
 
 - Para acessar o RabbitMQ UI, abra seu navegador e entre em  http://localhost:15672. As credenciais padrão são guest/guest.
-- Para acessar a API entre em http://localhost:5000
+- Para acessar a API entre em http://localhost:5000/swagger/index.html
 
   
 - Nesse projeto utilizei o SQL server e para acessar o banco de dados utilize:
