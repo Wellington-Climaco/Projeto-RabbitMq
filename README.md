@@ -4,6 +4,8 @@
 
 Esse projeto foi criado para consolidar alguns conceitos de rabbitmq, mass transit e docker. Nele não me apeguei a usar nenhuma arquitetura ou conceitos complexos, o foco foi fazer a comunicação entre dois projetos que não sabem um do outro via rabbitmq e fazer a conteinerização deles 
 
+A api envia dados de um cliente e a segunda aplicação consome essa mensagem, logo após ela pega o cep recebido na mensagem e consulta na API do viaCep se o cliente for do estado de SP ele é cadastrado no banco de dados.
+
 ## ❓ Como executar o projeto
 
 - Certifique-se de que você tenha o Docker instalado em sua máquina.
