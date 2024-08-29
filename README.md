@@ -1,4 +1,4 @@
-# Aplicações distribuidas - Rabbitmq | Docker
+# Rabbitmq | Docker
 
 ## 📘 Sobre o Projeto
 
